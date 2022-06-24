@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from html.truelysell.com/template/admin/edit-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 01:14:41 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title> Gestion des Collaborateurs </title>
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Feather CSS -->
+	<link rel="stylesheet" href="assets/plugins/icons/feather/feather.css">
+
+    <!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+	<!-- Datepicker CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- Datatables CSS -->
+	<link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="assets/css/animate.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/admin.css">
+
+</head>
+
+<body>
+	<div class="main-wrapper">
+	
+		<!-- Header -->
+		<div class="header">
+			<div class="header-left"> 
+				<a href="index.html" class="logo logo-small">
+					<img src="assets/img/logo-icon.png" alt="Logo" width="30" height="30">
+				</a>
+			</div>
+			<a href="javascript:void(0);" id="toggle_btn">
+				<i class="fas fa-align-left"></i>
+			</a>
+			<a class="mobile_btn" id="mobile_btn" href="javascript:void(0);">
+				<i class="fas fa-align-left"></i>
+			</a>
+			
+			<ul class="nav user-menu">
+				<!-- Notifications -->
+				<li class="nav-item dropdown noti-dropdown">
+					<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+						<i class="far fa-bell"></i>  <span class="badge badge-pill"></span>
+					</a>
+				</li>
+				<!-- /Notifications -->
+				
+				<!-- User Menu -->
+				<li class="nav-item dropdown">
+					<a href="javascript:void(0)" class="dropdown-toggle user-link  nav-link" data-bs-toggle="dropdown">
+						<span class="user-img">
+							<img class="rounded-circle" src="assets/img/togo.png" width="40" alt="Admin">
+						</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-end">
+						<a class="dropdown-item" href="admin-profile.html">Profile</a>
+						<a class="dropdown-item" href="login.html">Deconnexion</a>
+					</div>
+				</li>
+				<!-- /User Menu -->
+			</ul>
+		</div>
+		<!-- /Header -->
+		
+		<!-- Sidebar -->
+		<div class="sidebar" id="sidebar">
+			<div class="sidebar-logo">
+				<a href="index.html">
+					<img src="assets/img/logo-icon.png" class="img-fluid" alt="">
+				</a>
+			</div>
+			<div class="sidebar-inner slimscroll">
+				<div id="sidebar-menu" class="sidebar-menu">
+					<ul>
+						<li class="active">
+							<a href="index2.html"><i class="fas fa-columns"></i> <span>Dashboard</span></a>
+						</li>
+						<li>
+							<a href="#"><i class="fas fa-bullhorn"></i> <span> Services</span></a>
+						</li>
+						<li>
+							<a href="#"><i class="far fa-calendar-check"></i> <span> Reservations</span></a>
+						</li>
+						<li>
+							<a href="#"><i class="fas fa-hashtag"></i> <span>Payements</span></a>
+						</li>
+						<li>
+							<a href="#"><i class="fas fa-star-half-alt"></i> <span> Type Statut</span></a>
+						</li>
+						
+						<li>
+							<a href="#"><i class="fas fa-user"></i> <span>Utilisateurs</span></a>
+						</li>
+						<li class="submenu">
+							<a href="#"><i class="fas fa-clipboard"></i> <span> Collaborateurs</span>
+								<span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+							</a>
+							<ul>
+								<li><a href="list-collaborateurs.html">Liste Collaborateurs</a></li>
+								<li><a href="#">Grille Collaborateurs</a></li>
+								<li><a href="ajout-collaborateurs.html">Ajouter Collaborateurs</a></li>
+								<li><a href="modifier-collaborateurs.html">Modifier Collaborateurs</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /Sidebar -->
+		
+		<!-- Page Wrapper -->
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+        
+                <!-- Page Header -->
+                <div class="page-header invoices-page-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <ul class="breadcrumb invoices-breadcrumb">
+                                <li class="breadcrumb-item invoices-breadcrumb-item">
+                                    <a href="#">
+                                        <i class="fe fe-chevron-left"></i> Retour sur liste
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-auto">
+                            <div class="invoices-create-btn">
+                                <a  href="#" data-bs-toggle="modal" data-bs-target="#delete_invoices_details" class="btn delete-invoice-btn">
+                                    Supprimer Collaborateurs
+                                </a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#save_invocies_details" class="btn save-invoice-btn">
+                                    Sauvegarde
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Header -->
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card invoices-add-card">
+                            <div class="card-body">
+                                <form action="#" class="invoices-form">
+                                    <div class="invoices-main-form">
+                                        <div class="row">
+                                            <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                                                <div class="form-group">
+                                                    <label>Nom Collaborateur</label>
+                                                        <div id="checkBoxes-one">
+                                                            <div class="form-custom">
+                                                                <input type="text" class="form-control bg-grey" placeholder="Entrer nom collab">
+                                                            </div>
+                                                        </div>  
+                                                    
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Numero Téléphone</label>
+                                                    <input class="form-control" type="text" placeholder="Entrer le Numero">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-5 col-md-6 col-sm-12 col-12">
+                                                <h4 class="invoice-details-title">Details Collaborateurs</h4>
+                                                <div class="invoice-details-box">
+                                                    <div class="invoice-inner-footer">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="invoice-inner-date">
+                                                                    <span>
+                                                                        Date <input class="form-control datetimepicker" type="text" placeholder="20/06/2022">
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div class="invoice-inner-date invoice-inner-datepic">
+                                                                    <span>
+                                                                        Agenda  <input class="form-control datetimepicker" type="text" placeholder="Reserver">
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="invoice-add-table">
+                                        <h4>Autres Details</h4>
+                                        <div class="table-responsive">
+                                            <table class="table table-center add-table-items">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Adresse</th>
+                                                        <th>Services</th>
+                                                        <th>Departements</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="add-row">
+                                                        <td>
+                                                            <input type="text" class="form-control">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control">
+                                                        </td>
+                                                        <td class="add-remove text-end">
+                                                            <a href="javascript:void(0);" class="add-btn me-2"><i class="fas fa-plus-circle"></i></a> 
+                                                            <a href="#" class="copy-btn me-2"><i class="fe fe-copy"></i></a><a href="javascript:void(0);" class="remove-btn"><i class="fe fe-trash-2"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        
+                                        <div class="col-lg-5 col-md-6">
+                                           
+                                            <div class="upload-sign">  
+                                                <div class="form-group float-end mb-0">
+                                                    <button class="btn btn-primary" type="submit">Enregistrer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Wrapper -->
+
+        <!-- Invoices Preview Modal -->
+        
+        <!-- /Invoices Preview Modal -->
+
+        
+        <!-- Delete Invoices Modal -->
+        <div class="modal custom-modal fade" id="delete_invoices_details" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="form-header">
+                            <h3>Supprimer details</h3>
+                            <p>Etes vous sur?</p>
+                        </div>
+                        <div class="modal-btn delete-action">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="javascript:void(0);" data-bs-dismiss="modal" class="btn btn-primary paid-continue-btn">Supprimer</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="javascript:void(0);" data-bs-dismiss="modal" class="btn btn-primary paid-cancel-btn">Annuler</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Delete Invoices Modal -->
+
+        <!-- Save Invoices Modal -->
+        <div class="modal custom-modal fade" id="save_invocies_details" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="form-header">
+                            <h3>Enregistrer details</h3>
+                            <p>Etes vous dur d'enregistrer ?</p>
+                        </div>
+                        <div class="modal-btn delete-action">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="javascript:void(0);" data-bs-dismiss="modal" class="btn btn-primary paid-continue-btn">Sauvegarder</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="javascript:void(0);" data-bs-dismiss="modal" class="btn btn-primary paid-cancel-btn">Annuler</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Save Invoices Modal -->
+	</div>
+	
+	<!-- jQuery -->
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
+
+	<!-- Datepicker Core JS -->
+	<script src="assets/js/moment.min.js"></script>
+	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Select2 JS -->
+	<script src="assets/plugins/select2/js/select2.min.js"></script>
+
+	<!-- Datatables JS -->
+	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatables/datatables.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/admin.js"></script> 
+
+</body>
+
+
+<!-- Mirrored from html.truelysell.com/template/admin/edit-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 01:14:41 GMT -->
+</html>

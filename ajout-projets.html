@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from html.truelysell.com/template/admin/add-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 01:14:39 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>Gestion Collaborateurs</title>
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Feather CSS -->
+	<link rel="stylesheet" href="assets/plugins/icons/feather/feather.css">
+
+    <!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+	<!-- Datepicker CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- Datatables CSS -->
+	<link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="assets/css/animate.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/admin.css">
+
+</head>
+
+<body>
+	<div class="main-wrapper">
+	
+		<!-- Header -->
+		<div class="header">
+			<div class="header-left"> 
+				<a href="index.html" class="logo logo-small">
+					<img src="assets/img/logo-icon.png" alt="Logo" width="30" height="30">
+				</a>
+			</div>
+			<a href="javascript:void(0);" id="toggle_btn">
+				<i class="fas fa-align-left"></i>
+			</a>
+			<a class="mobile_btn" id="mobile_btn" href="javascript:void(0);">
+				<i class="fas fa-align-left"></i>
+			</a>
+			
+            <ul class="nav user-menu">
+				<!-- Notifications -->
+				<li class="nav-item dropdown noti-dropdown">
+					<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+						<i class="far fa-bell"></i>  <span class="badge badge-pill"></span>
+					</a>
+				</li>
+				<!-- /Notifications -->
+				
+				<!-- User Menu -->
+				<li class="nav-item dropdown">
+					<a href="javascript:void(0)" class="dropdown-toggle user-link  nav-link" data-bs-toggle="dropdown">
+						<span class="user-img">
+							<img class="rounded-circle" src="assets/img/togo.png" width="40" alt="Admin">
+						</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-end">
+						<a class="dropdown-item" href="admin-profile.html">Profile</a>
+						<a class="dropdown-item" href="login.html">Deconnexion</a>
+					</div>
+				</li>
+				<!-- /User Menu -->
+			</ul>
+		</div>
+		<!-- /Header -->
+		
+		<!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <a href="index.html">
+                    <img src="assets/img/logo-icon.png" class="img-fluid" alt="">
+                </a>
+            </div>
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li >
+                            <a href="index2.html"><i class="fas fa-columns"></i> <span>Dashboard</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-folder-open"></i> <span> Projets</span>
+                                <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                            </a>
+                            <ul>
+                                <li ><a href="liste-projets.html" >Liste projets</a></li>
+                                <li><a href="ajout-projets.html" class="active">Nouveau projet</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="liste-taches.html"><i class="far fa-calendar-check"></i> <span> Tâches</span></a>
+                        </li>
+                        <li >
+                            <a href="gerer.html"><i class="fas fa-star-half-alt"></i> <span> Gerer</span></a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fas fa-user"></i> <span>Utilisateurs</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fas fa-clipboard"></i> <span> Collaborateurs</span>
+                                <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                            </a>
+                            <ul>
+                                <li ><a href="list-collaborateurs.html" >Liste Collaborateurs</a></li>
+                                <li><a href="ajout-collaborateurs.html">Ajouter Collaborateurs</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-cog"></i> <span>Réglages</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Sidebar -->
+		
+		<!-- Page Wrapper -->
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+        
+                <!-- Page Header -->
+                <div class="page-header invoices-page-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <ul class="breadcrumb invoices-breadcrumb">
+                                <li class="breadcrumb-item invoices-breadcrumb-item">
+                                    <a href="liste-projets.html">
+                                        <i class="fe fe-chevron-left"></i> Retour sur liste
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Header -->
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card invoices-add-card">
+                            <div class="card-body">
+                                <form action="#" id="add_projet" class="invoices-form">
+                                    <div class="invoices-main-form">
+                                        <div class="row">
+                                            <h4>Nouveau projet</h4>
+                                            <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                                                <div class="form-group">
+                                                    <label>titre</label>
+                                                        <div id="checkBoxes-one">
+                                                            <div class="form-custom">
+                                                                <input type="text" id="nom" name="nom" class="form-control bg-grey" placeholder="Entrer nom collab">
+                                                            </div>
+                                                        </div>    
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="col-xl-5 col-md-6 col-sm-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="">Description</label>
+                                                    <textarea class="form-control "  name="description" id="" cols="30" rows="10"></textarea>
+                                                </div>
+                                                
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                   
+                                     <div class="invoice-add-table">
+                                        <h4>Taches du projet</h4>
+                                        <div class="table-responsive">
+                                            <table class="table table-center add-table-items">
+                                                <thead>
+                                                    <tr>
+                                                        <th>titre </th>
+                                                        <th>description</th>
+                                                        <th>date fin</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbody">
+                                                    <tr class="add-row">
+                                                        <td>
+                                                            <input type="text" name="tache[]" required class="form-control">
+                                                        </td>
+                                                        <td>
+                                                            <textarea class="form-control "  name="descriptiontache[]" id="" ></textarea>
+                                                        </td>
+                                                        <td>
+                                                            <input type="date" name="date[]" class="form-control ">
+                                                        </td>
+                                                        
+                                                        <td class="add-remove text-end">
+                                                            <a href="javascript:void(0);" class="add-btn me-2"><i class="fas fa-plus-circle"></i></a> 
+                                                            <a href="#" class="copy-btn me-2"><i class="fe fe-copy"></i></a><a href="javascript:void(0);" class="remove-btn"><i class="fe fe-trash-2"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> 
+                                    <div class="row">
+                                        
+                                        <div class="col-lg-5 col-md-6">
+                                           
+                                            <div class="upload-sign">  
+                                                <div class="form-group float-end mb-0">
+                                                    <button class="btn btn-primary" id="btn-create" type="submit">Enregistrer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Wrapper -->
+
+        <!-- Invoices Preview Modal -->
+        
+        <!-- /Invoices Preview Modal -->
+
+        
+       
+	</div>
+	
+	<!-- jQuery -->
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
+
+	<!-- Datepicker Core JS -->
+	<script src="assets/js/moment.min.js"></script>
+	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Select2 JS -->
+	<script src="assets/plugins/select2/js/select2.min.js"></script>
+
+	<!-- Datatables JS -->
+	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatables/datatables.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/admin.js"></script> 
+
+    <!-- Include Dexie -->
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+
+    <!-- Custom main file-->
+    
+<script>
+   function addprojet(projet){
+        $.post('serveur/newprojets.php',projet.serializeArray(),"JSON")
+            .done(function(data,status){
+                //console.log(data);
+                 if(!data.error){
+                    alert("projet ajouté");
+                    projet.reset();
+                }
+                else{
+                    alert(data.message);
+                } 
+            })
+            .fail(function(err){
+                alert("erreur de connexion au serveur");
+                console.log(err)
+            });
+    }
+    $("#add_projet").on('submit',function(e){
+        e.preventDefault();
+        data=$(this).serializeArray();
+       if($(this).find("[name='nom']").val()==''){
+        $(this).find("[name='nom']").focus();
+                alert("Veuillez remplir correctement le formulaire");
+                return false;
+       }
+       if($(this).find("[name='description']").val()==''){
+        $(this).find("[name='description']").focus();
+                alert("Veuillez remplir correctement le formulaire");
+                return false;
+       }
+       
+        addprojet($(this));
+    })
+</script>
+</body>
+
+
+<!-- Mirrored from html.truelysell.com/template/admin/add-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 01:14:41 GMT -->
+</html>

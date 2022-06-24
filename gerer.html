@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from html.truelysell.com/template/admin/add-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 01:14:39 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Gestion Collaborateurs</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Feather CSS -->
+    <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/admin.css">
+   
+    <style>
+       select{
+        display: inline-block;
+        width: 100%;
+        
+       }
+       #ajouter{
+        color: white;
+        background-color: green;
+        margin-top: 20px;
+        border: 1px solid green;
+        padding: 10px;
+        border-radius: 5px;
+       }
+       #ajouter:hover{
+        opacity: .8;
+       }
+       tr[rowspan]{
+            border-top: solid 3px green;
+       }
+       td span{
+        display: inline-block;
+        color: blue;
+        text-decoration: underline;
+        padding: 1px;
+        border-radius: 5px;
+       }
+    </style>
+
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <a href="index.html" class="logo logo-small">
+                    <img src="assets/img/logo-icon.png" alt="Logo" width="30" height="30">
+                </a>
+            </div>
+            <a href="javascript:void(0);" id="toggle_btn">
+                <i class="fas fa-align-left"></i>
+            </a>
+            <a class="mobile_btn" id="mobile_btn" href="javascript:void(0);">
+                <i class="fas fa-align-left"></i>
+            </a>
+
+            <ul class="nav user-menu">
+                <!-- Notifications -->
+                <li class="nav-item dropdown noti-dropdown">
+                    <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                        <i class="far fa-bell"></i> <span class="badge badge-pill"></span>
+                    </a>
+                </li>
+                <!-- /Notifications -->
+
+                <!-- User Menu -->
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle user-link  nav-link" data-bs-toggle="dropdown">
+                        <span class="user-img">
+                            <img class="rounded-circle" src="assets/img/togo.png" width="40" alt="Admin">
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" href="admin-profile.html">Profile</a>
+                        <a class="dropdown-item" href="login.html">Deconnexion</a>
+                    </div>
+                </li>
+                <!-- /User Menu -->
+            </ul>
+        </div>
+        <!-- /Header -->
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <a href="index.html">
+                    <img src="assets/img/logo-icon.png" class="img-fluid" alt="">
+                </a>
+            </div>
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li >
+                            <a href="index2.html"><i class="fas fa-columns"></i> <span>Dashboard</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-folder-open"></i> <span> Projets</span>
+                                <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                            </a>
+                            <ul>
+                                <li ><a href="liste-projets.html" >Liste projets</a></li>
+                                <li><a href="ajout-projets.html">Nouveau projet</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="liste-taches.html"><i class="far fa-calendar-check"></i> <span> Tâches</span></a>
+                        </li>
+                        <li class="active">
+                            <a href="gerer.html"><i class="fas fa-star-half-alt"></i> <span> Gerer</span></a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fas fa-user"></i> <span>Utilisateurs</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fas fa-clipboard"></i> <span> Collaborateurs</span>
+                                <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                            </a>
+                            <ul>
+                                <li ><a href="list-collaborateurs.html" >Liste Collaborateurs</a></li>
+                                <li><a href="ajout-collaborateurs.html">Ajouter Collaborateurs</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-cog"></i> <span>Réglages</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Sidebar -->
+
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+                <!-- Page Header -->
+                <div class="page-header invoices-page-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <ul class="breadcrumb invoices-breadcrumb">
+                                <li class="breadcrumb-item invoices-breadcrumb-item">
+                                    <a href="ajout-projets.html">
+                                        <i class="fe fe-plus"></i> Gerer
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="col-auto">
+                            <div class="invoices-create-btn">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#delete_invoices_details"
+                                    class="btn delete-invoice-btn">
+                                    Supprimer Collaborateurs
+                                </a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#save_invocies_details"
+                                    class="btn save-invoice-btn">
+                                    Sauvegarde
+                                </a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- /Page Header -->
+
+                <div class="row" id="">
+                    <fieldset>
+                        <legend>gestion</legend>
+                        <form action="" id="effectuer">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">Selectionner les taches ici...</label>
+                                    <select required class="custom-select2" name="taches[]"  multiple="multiple" id="taches">
+                                        
+                                        
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">Selectionner les collaborateurs ici...</label>
+                                    <select required class="custom-select2" name="collaborateurs[]" size="1" multiple id="collaborateurs">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="text-center">
+                                <button type="submit" id="ajouter">
+                                    Ajouter
+                                </button>
+                            </div>
+                        </form>
+                    </fieldset>
+                    
+                    
+                </div>
+                <div id="result"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Trache en cours </h4>
+                        <div class="card-body">
+                            <div class="table-responsive bg-white">
+                                <table class="table table-center table-bordered " id="effect">
+                                    <thead>
+                                        <tr>
+                                            <th>Taches</th>
+                                            <th>Collaborateurs</th>
+                                        </tr>
+                                    </thead>
+                                   
+                                </table>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Wrapper -->
+
+        <!-- Invoices Preview Modal -->
+
+        <!-- /Invoices Preview Modal -->
+
+
+       
+    </div>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
+
+    <!-- Datepicker Core JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+    <!-- Datatables JS -->
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables/datatables.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/admin.js"></script>
+
+    <script>
+        $(".custom-select2").select2();
+     
+       function getTask(){
+        $.get("serveur/getTask.php",null,"JSON")
+            .done(function(data,status,jqxhr){
+                if(!data.error){
+                    $.each(data.data,function(i,value){
+                        var optgroup=$("<optgroup>");
+                        optgroup.attr({"label":value.nom});
+                        $.each(value.taches,function(j,value2){
+                            var option=$("<option>");
+                            option.html(value2.libelle);
+                            option.attr({"value":value2.id});
+                            optgroup.append(option);
+
+                        });
+                        $("#taches").append(optgroup);
+                    });
+                }
+                else{
+                    $("#result").html(data.message);
+                }
+                //$("#result").html(jqxhr.responseText);
+            })
+            .fail(function(err){
+                console.log(err);
+                alert("Erreur de connexion au serveur");
+            });
+       }
+       function getCollaborateurs(){
+        $.get("serveur/getCollaborateurs.php",null,"JSON")
+            .done(function(data,status,jqxhr){
+                if(!data.error){
+                    $.each(data.data,function(i,value){
+                        var option=$("<option>");
+                            option.html(value.prenom+"  "+value.nom+"("+value.nbr+")"+":     "+value.taches);
+                            option.attr({"value":value.id});
+                        $("#collaborateurs").append(option);
+                    });
+                }
+                else{
+                    $("#result").html(data.message);
+                }
+                //$("#result").html(jqxhr.responseText);
+            })
+            .fail(function(err){
+                console.log(err);
+                alert("Erreur de connexion au serveur");
+            });
+       }
+       function reset(){
+            //$("#effectuer").reset();
+            $("#taches").html("");
+            $("#collaborateurs").html("");
+            $("#effect > tbody").remove();
+
+            getTask();
+            getCollaborateurs();
+            getTable();
+       }
+       function addEffect(form){
+        var data1=form.serializeArray();
+        
+            $.post("serveur/addEffectuer.php",data1,"JSON")
+                .done(function(data,status,jqxhr){
+                    if(!data.error){
+                        reset();
+                        alert("Operation reussit");
+                    }
+                    else{
+                        $("#result").html(data.message);
+                        alert("une erreur s'est produite");
+                    }
+                    //$("#result").html(jqxhr.responseText);
+                })
+                .fail(function(err){
+                    alert("Erreur de connexion au serveur");
+                    console.log(err);
+                });
+       }
+       function getTable(){
+            $.get("serveur/taskEffectuer.php",null,"JSON")
+                .done(function(data,status,jqxhr){
+                    if(!data.error){
+                        var tbody=$("<tbody>");
+                        var tr="";
+                        $.each(data.data,function(i,value) {
+                            tr+="<tr rowspan='"+value.collaborateurs.length+"'>\
+                                        <td>"+value.libelle+"(<span>"+value.nom+"</span>)<button class='btn btn-primary'> <i class='fe fe-plus'></i></button> </td>\
+                                        <td>"+value.collaborateurs[0].nom+"  "+value.collaborateurs[0].prenom+"</td>\
+                                    </tr>";
+                                    $.each(value.collaborateurs,function(j,value2){
+                                        if(j!=0){
+                                            tr+="<tr> <td>"+value2.nom+"  "+value2.prenom+"</td></tr>";
+                                        }
+                                        
+                                    });
+                                    
+                        });
+                        tbody.html(tr);
+                        console.log(tr);
+                        $("#effect").append(tbody);
+                    }
+                    else{
+                        $("#result").html(data.message);  
+                    }
+                    //$("#result").html(jqxhr.responseText);
+                })
+                .fail(function(err){
+                    console.log(err);
+                    alert("Erreur de connexion au serveur");
+                })
+       }
+       getTask();
+       getCollaborateurs();
+       getTable();
+       $("#effectuer").on('submit',function(e){
+            e.preventDefault();
+            $(this).find("select")
+            addEffect($(this));
+       });
+    </script>
+
+</body>
+
+
+<!-- Mirrored from html.truelysell.com/template/admin/add-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 01:14:41 GMT -->
+
+</html>

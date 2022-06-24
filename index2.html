@@ -1,0 +1,320 @@
+!<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from html.truelysell.com/template/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 01:13:53 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>Gestion Collaborateurs</title>
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="assets/css/animate.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/admin.css">
+	<style>
+		.link{
+			display: block;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="main-wrapper">
+	
+		<!-- Header -->
+		<div class="header">
+			<div class="header-left"> 
+				<a href="index.html" class="logo logo-small">
+					<img src="assets/img/logo-icon.png" alt="Logo" width="30" height="30">
+				</a>
+			</div>
+			<a href="javascript:void(0);" id="toggle_btn">
+				<i class="fas fa-align-left"></i>
+			</a>
+			<a class="mobile_btn" id="mobile_btn" href="javascript:void(0);">
+				<i class="fas fa-align-left"></i>
+			</a>
+			
+			<ul class="nav user-menu">
+				<!-- Notifications -->
+				<li class="nav-item dropdown noti-dropdown">
+					<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+						<i class="far fa-bell"></i>  <span class="badge badge-pill"></span>
+					</a>
+				</li>
+				<!-- /Notifications -->
+				
+				<!-- User Menu -->
+				<li class="nav-item dropdown">
+					<a href="javascript:void(0)" class="dropdown-toggle user-link  nav-link" data-bs-toggle="dropdown">
+						<span class="user-img">
+							<img class="rounded-circle" src="assets/img/togo.png" width="40" alt="Admin">
+						</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-end">
+						<a class="dropdown-item" href="admin-profile.html">Profile</a>
+						<a class="dropdown-item" href="login.html">Deconnexion</a>
+					</div>
+				</li>
+				<!-- /User Menu -->
+			</ul>
+		</div>
+		<!-- /Header -->
+		
+		<!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <a href="index.html">
+                    <img src="assets/img/logo-icon.png" class="img-fluid" alt="">
+                </a>
+            </div>
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="index2.html"><i class="fas fa-columns"></i> <span>Dashboard</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-folder-open"></i> <span> Projets</span>
+                                <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                            </a>
+                            <ul>
+                                <li ><a href="liste-projets.html" >Liste projets</a></li>
+                                <li><a href="ajout-projets.html">Nouveau projet</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="liste-taches.html"><i class="far fa-calendar-check"></i> <span> Tâches</span></a>
+                        </li>
+                        <li >
+                            <a href="gerer.html"><i class="fas fa-star-half-alt"></i> <span> Gerer</span></a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fas fa-user"></i> <span>Utilisateurs</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fas fa-clipboard"></i> <span> Collaborateurs</span>
+                                <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                            </a>
+                            <ul>
+                                <li ><a href="list-collaborateurs.html" >Liste Collaborateurs</a></li>
+                                <li><a href="ajout-collaborateurs.html">Ajouter Collaborateurs</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-cog"></i> <span>Réglages</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Sidebar -->
+		
+		<div class="page-wrapper">
+			<div class="content container-fluid">
+			
+				<!-- Page Header -->
+				<div class="page-header">
+					<div class="row">
+						<div class="col-12">
+							<h3 class="page-title">Bienvenue Admin!</h3>
+						</div>
+					</div>
+				</div>
+				<!-- /Page Header -->
+				
+				<div class="row">
+					<div class="col-xl-3 col-sm-6 col-12">
+						<a href="liste-projets.html" class="link">
+							<div class="card">
+								<div class="card-body">
+									<div class="dash-widget-header">
+										<span class="dash-widget-icon bg-primary">
+											<i class="fa fa-folder-open"></i>
+										</span>
+										<div class="dash-widget-info">
+											<h3 id="projets">0</h3>
+											<h6 class="text-muted">projets</h6>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						
+					</div>
+					<div class="col-xl-3 col-sm-6 col-12">
+						<a href="list-collaborateurs.html" class="link">
+							<div class="card">
+								<div class="card-body">
+									<div class="dash-widget-header">
+										<span class="dash-widget-icon bg-primary">
+											<i class="fas fa-user-shield"></i>
+										</span>
+										<div class="dash-widget-info">
+											<h3 id="collaborateurs">0</h3>
+											<h6 class="text-muted">Collaborateurs</h6>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						
+					</div>
+					<div class="col-xl-3 col-sm-6 col-12">
+						<a href="liste-taches.html" class="link">
+							<div class="card">
+								<div class="card-body">
+									<div class="dash-widget-header">
+										<span class="dash-widget-icon bg-primary">
+											<i class="fa fa-tasks"></i>
+										</span>
+										<div class="dash-widget-info">
+											<h3 id="taches">0</h3>
+											<h6 class="text-muted">Taches</h6>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 d-flex">
+					
+						<!-- Recent Bookings -->
+						<div class="card card-table flex-fill">
+							<div class="card-header">
+								<h4 class="card-title">Meilleurs collaborateurs</h4>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-center" id="bestcollab">
+										<thead>
+											<tr>
+												<th>Nom</th>
+												<th>Prenom</th>
+												<th>numero</th>
+												<th>Taches Effectuer</th>
+											</tr>
+										</thead>
+										<tbody>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- /Recent Bookings -->
+						
+					</div>
+					<div class="col-md-6 d-flex">
+					
+						<!-- Payments -->
+						<div class="card card-table flex-fill">
+							<div class="card-header">
+								<h4 class="card-title"> Agenda </h4>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-center">
+										<thead>
+											<tr>
+												<th>Date</th>
+												<th>Collaborateurs</th>
+												<th>Service</th>
+												<th>Status</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- Payments -->
+						
+					</div>
+				</div>
+				
+			</div>
+		</div> 
+	</div>
+
+	<!-- jQuery -->
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/admin.js"></script>
+	<script>
+		function getStat(){
+			$.post("serveur/getstat.php",null,"JSON")
+				.done(function(data,status,jqhxr){
+					if(!data.error){
+						$("#projets").html(data.projet);
+						$("#taches").html(data.task);
+						$("#collaborateurs").html(data.collab);
+					}
+					else{
+						alert(data.message);
+					}
+					//$("#result").html(jqhxr.responseText);
+				})
+				.fail(function(err){
+					alert("Erreur de connexion au serveur");
+					console.log(err);
+				})
+		}
+		function getBestCollab(){
+			$.get("serveur/bestcollab.php",null,"JSON")
+                .done(function(data,status,jqxhr){
+                    if(!data.error){
+                        console.log(data.data)
+                       $.each(data.data,function(i,collab){
+                           var tr=$("<tr>");
+                           console.log(collab);
+                           var ligne=" <td>"+collab.nom+"</td>\
+                                        <td>"+collab.prenom+"</td>\
+                                        <td>"+collab.numero+"\
+                                        <td>"+collab.nbr+"</td>\
+                                        ";
+                            $("#bestcollab>tbody").append(tr.html(ligne).hide().fadeIn(500)); 
+                       }); 
+                    }
+                    else{
+                        alert(data.message);
+                        var tr=$("<tr>");
+                        var td=$("<td>").text(data.message);
+                        td.attr({"colspan":"6","style":"height:200px;background-color:#f6f6f6;text-align:center"});
+                        $("#collaborateurs>tbody").html(tr.html(td));
+                    }
+                })
+                .fail(function(){
+                    alert("Erreur de connexion au serveur");
+                });
+		}
+		getStat();
+		getBestCollab();
+	</script>
+</body>
+
+
+<!-- Mirrored from html.truelysell.com/template/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 01:14:08 GMT -->
+</html>

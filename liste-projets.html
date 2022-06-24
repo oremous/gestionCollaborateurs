@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from html.truelysell.com/template/admin/add-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 01:14:39 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Gestion Collaborateurs</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Feather CSS -->
+    <link rel="stylesheet" href="assets/plugins/icons/feather/feather.css">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <style>
+        .card-header h4,.card-body p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: normal;
+            white-space: nowrap;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <a href="index.html" class="logo logo-small">
+                    <img src="assets/img/logo-icon.png" alt="Logo" width="30" height="30">
+                </a>
+            </div>
+            <a href="javascript:void(0);" id="toggle_btn">
+                <i class="fas fa-align-left"></i>
+            </a>
+            <a class="mobile_btn" id="mobile_btn" href="javascript:void(0);">
+                <i class="fas fa-align-left"></i>
+            </a>
+
+            <ul class="nav user-menu">
+                <!-- Notifications -->
+                <li class="nav-item dropdown noti-dropdown">
+                    <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                        <i class="far fa-bell"></i> <span class="badge badge-pill"></span>
+                    </a>
+                </li>
+                <!-- /Notifications -->
+
+                <!-- User Menu -->
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle user-link  nav-link" data-bs-toggle="dropdown">
+                        <span class="user-img">
+                            <img class="rounded-circle" src="assets/img/togo.png" width="40" alt="Admin">
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" href="admin-profile.html">Profile</a>
+                        <a class="dropdown-item" href="login.html">Deconnexion</a>
+                    </div>
+                </li>
+                <!-- /User Menu -->
+            </ul>
+        </div>
+        <!-- /Header -->
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <a href="index.html">
+                    <img src="assets/img/logo-icon.png" class="img-fluid" alt="">
+                </a>
+            </div>
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li >
+                            <a href="index2.html"><i class="fas fa-columns"></i> <span>Dashboard</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-folder-open"></i> <span> Projets</span>
+                                <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                            </a>
+                            <ul>
+                                <li ><a href="liste-projets.html" class="active">Liste projets</a></li>
+                                <li><a href="ajout-projets.html">Nouveau projet</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="liste-taches.html"><i class="far fa-calendar-check"></i> <span> Tâches</span></a>
+                        </li>
+                        <li>
+                            <a href="gerer.html"><i class="fas fa-star-half-alt"></i> <span> Gerer</span></a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fas fa-user"></i> <span>Utilisateurs</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fas fa-clipboard"></i> <span> Collaborateurs</span>
+                                <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                            </a>
+                            <ul>
+                                <li ><a href="list-collaborateurs.html" >Liste Collaborateurs</a></li>
+                                <li><a href="ajout-collaborateurs.html">Ajouter Collaborateurs</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-cog"></i> <span>Réglages</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Sidebar -->
+
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+                <!-- Page Header -->
+                <div class="page-header invoices-page-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <ul class="breadcrumb invoices-breadcrumb">
+                                <li class="breadcrumb-item invoices-breadcrumb-item">
+                                    <a href="ajout-projets.html">
+                                        <i class="fe fe-plus"></i> Ajouter
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="col-auto">
+                            <div class="invoices-create-btn">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#delete_invoices_details"
+                                    class="btn delete-invoice-btn">
+                                    Supprimer Collaborateurs
+                                </a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#save_invocies_details"
+                                    class="btn save-invoice-btn">
+                                    Sauvegarde
+                                </a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- /Page Header -->
+
+                <div class="row" id="listprojets">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- /Page Wrapper -->
+
+        <!-- Invoices Preview Modal -->
+
+        <!-- /Invoices Preview Modal -->
+
+
+       
+    </div>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
+
+    <!-- Datepicker Core JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+    <!-- Datatables JS -->
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables/datatables.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/admin.js"></script>
+
+    <script>
+        function num(id){
+            var donee={collab:0,task:0}
+            var de=$.get("serveur/number.php",{id:id},"JSON")
+                .done(function(data,status,jqxhr){
+                   donee.collab=data.collab;
+                   donee.task=data.task;
+                   return $(this); 
+                })
+                .fail(function(){
+                    //return 0;
+                });
+                return donee;
+        }
+        console.log(num(2));
+        function listprojets() { 
+            $.get("serveur/listprojets.php",null,"JSON")
+                .done(function(data,status,jqxhr){
+                    if(!data.error){
+                        if(data.data.lenght==0){
+                            var div=$("<div>");
+                            div.text(data.message);
+                            div.addClass("jumbotron");
+                            $("#listprojets").html(div); 
+                        }
+                       $.each(data.data,function(i,projet){
+                            number= num(projet.id);
+                            console.log(number);
+                           var div=$("<div>");
+                           div.addClass('col-md-3');
+                           var card=" <div class='card invoices-add-card'>\
+                                            <div class='card-header'>\
+                                                <h4 title='"+projet.nom+"'>"+projet.nom+"</h4>\
+                                            </div>\
+                                            <div class='card-body'>\
+                                                <p title='"+projet.description+"'>"+projet.description+"</p>\
+                                            </div>\
+                                            <div class='card-footer text-center'>\
+                                                <a name=''  data='"+projet.id+"' id='' class='btn btn-primary voir' href='#' role='button'>voir</a>\
+                                                <a name='' id='' class='btn btn-default' href='#' role='button' title='nombre de collaborateurs sur le projet'><i class='fa fa-users'></i> "+projet.nbr_collab+"</a>\
+                                                <a name='' id='' class='btn btn-default' href='#' role='button' title='nombres de taches du projet'><i class='fa fa-tasks'></i> "+projet.nbr_task+"</a>\
+                                            </div>\
+                                        </div>\
+                                        ";
+                            $("#listprojets").append(div.html(card).hide().fadeIn(500));  
+                       }); 
+                    }
+                    else{
+                        alert(data.message);
+                       var div=$("<div>");
+                        div.text(data.message);
+                        div.addClass("jumbotron");
+                        $("#listprojets").html(div); 
+                    }
+                })
+                .fail(function(){
+                    alert("Erreur de connexion au serveur");
+                });
+         }
+         function deleteProjets(id,elt){
+            $.get("serveur/supcollaborateurs.php",{id:id},"JSON")
+                .done(function(data,status,jqxhr){
+                    if(!data.error){
+                        elt.parents("tr").fadeOut(1000);
+                        alert("collaborateur suprimer");
+                    }
+                    else{
+                        alert(data.message);
+                    }
+                })
+                .fail(function(){
+                    alert("Erreur de connexion au serveur");
+                });
+         }
+
+         listprojets();
+         $("#collaborateurs").on('click','.remove-btn',function(e){
+            e.preventDefault();
+            deleteProjets($(this).attr("data"),$(this));
+         });
+    </script>
+
+</body>
+
+
+<!-- Mirrored from html.truelysell.com/template/admin/add-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 01:14:41 GMT -->
+
+</html>
